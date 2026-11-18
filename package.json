@@ -1,0 +1,9 @@
+{
+  "name": "a11y-wcag-pipeline-engines",
+  "private": true,
+  "description": "Motori di controllo JavaScript usati dalla pipeline Python (versioni fissate).",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "axe-core": "4.14.1"
+  }
+}

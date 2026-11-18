@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+build/
+dist/
+
+# Node (motori JavaScript)
+node_modules/
+
+# Report generati e cache dei test
+a11y-report/
+reports/
+.cache/
+
+# Sessioni di login salvate da Playwright: contengono credenziali
+*.storage-state.json
+storage-state.json
+.env
+
+# Editor
+.idea/
+.vscode/
+.DS_Store

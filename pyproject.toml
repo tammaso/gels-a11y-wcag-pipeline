@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gels-a11y-wcag-pipeline"
+version = "0.1.0"
+description = "Rilevamento automatico di errori di accessibilità (WCAG 2.2 A/AA, EN 301 549) su pagine web"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "playwright>=1.49",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+a11y-check = "a11y_pipeline.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+a11y_pipeline = ["data/*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "browser: richiede un browser (Playwright) e axe-core installato con npm ci",
+    "network: richiede accesso a internet",
+    "act: regressione sui test case ACT del W3C (lenta, richiede browser e rete)",
+]
+addopts = "-m 'not act'"

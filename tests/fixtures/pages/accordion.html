@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>Accordion di prova</title>
+</head>
+<body>
+  <main>
+    <h1>Accordion di prova</h1>
+    <button id="apri" aria-expanded="false" aria-controls="pannello">Mostra l'opera</button>
+    <div id="pannello" hidden>
+      <!-- Errore visibile solo con il pannello aperto -->
+      <img src="opera.png">
+    </div>
+  </main>
+  <script>
+    document.getElementById("apri").addEventListener("click", function () {
+      var pannello = document.getElementById("pannello");
+      pannello.hidden = !pannello.hidden;
+      this.setAttribute("aria-expanded", String(!pannello.hidden));
+    });
+  </script>
+</body>
+</html>

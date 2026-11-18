@@ -1,0 +1,37 @@
+# Differenze note tra axe-core e i test case ACT del W3C, da non considerare regressioni.
+#
+# Ogni voce indica il test case (testcaseId), la regola ACT, la versione di axe-core in cui
+# è stata osservata e il motivo. Il testcaseId è un hash del contenuto: se il W3C modifica
+# il test case, l'hash cambia e la differenza torna a essere segnalata, così va rivalutata.
+#
+# Osservate il 18/11/2026 con axe-core 4.14.1 sui test case di github.com/w3c/wcag-act-rules.
+
+false_positives:
+  - testcaseId: "c88fcaf4d90e2156de75a1cdad8734a3d75c49e4"
+    ruleId: "akn7bn"  # Iframe with interactive elements is not excluded from tab-order
+    axe_version: "4.14.1"
+    reason: >-
+      L'iframe con tabindex=-1 è reso inerte da un dialog modale aperto: per ACT la regola non
+      si applica, axe (frame-focusable-content) non considera l'inerzia e segnala l'errore.
+  - testcaseId: "a13349ef619df6256bd52acb8008760c3711f5dd"
+    ruleId: "akn7bn"
+    axe_version: "4.14.1"
+    reason: Stesso esempio del precedente (variante del test case).
+  - testcaseId: "2845a8409b1c07caa856d1bfbf42ed244b0de9c2"
+    ruleId: "afw4f7"  # Text has minimum contrast (stesso test case anche per 09o5cg)
+    axe_version: "4.14.1"
+    reason: >-
+      Il testo è composto solo da simboli (----===+++), che per ACT non sono testo da
+      sottoporre al controllo del contrasto; axe (color-contrast) lo controlla comunque.
+  - testcaseId: "efa9543339cdad5412c7719b266a633a29ce149e"
+    ruleId: "2ee8b8"  # Visible label is part of accessible name
+    axe_version: "4.14.1"
+    reason: >-
+      Pulsante con icona da font a legature ("search" visualizzato come lente): per ACT non
+      c'è un'etichetta testuale visibile, axe (label-content-name-mismatch) confronta il testo.
+  - testcaseId: "c9b81bf076633f3d7c2c52b75e11ca89f921bf29"
+    ruleId: "2ee8b8"
+    axe_version: "4.14.1"
+    reason: >-
+      Etichetta visibile "Next…" e nome accessibile "Next": per ACT la punteggiatura finale si
+      ignora, axe segnala la differenza.

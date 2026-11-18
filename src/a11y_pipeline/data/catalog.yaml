@@ -1,0 +1,79 @@
+# Catalogo dei 55 criteri di successo WCAG 2.2 di livello A e AA.
+#
+# Campi:
+#   id        numero del criterio (WCAG 2.2, https://www.w3.org/TR/WCAG22/)
+#   title     titolo ufficiale in inglese, come nel testo W3C
+#   level     A o AA
+#   since     versione WCAG in cui il criterio è stato introdotto (2.0, 2.1, 2.2)
+#   tier      classificazione di questo progetto (non W3C) sulla verificabilità automatica:
+#               1 = esistono regole ACT implementate in modo coerente da strumenti automatici
+#                   (controllo automatico, ma solo di alcuni aspetti del criterio)
+#               2 = esistono regole ACT, ma serve giudizio umano o euristiche
+#               3 = nessuna regola ACT: il criterio non è verificabile in automatico
+#             Fonti: https://www.w3.org/WAI/standards-guidelines/act/rules/ e le pagine di
+#             implementazione di Alfa, axe-core, UsableNet AQA e webmate (novembre 2026).
+#
+# Le clausole EN 301 549 si ricavano dal numero del criterio (9.<id>), vedi catalog.py:
+#   - EN 301 549 v3.2.1 (armonizzata, riferimento di legge oggi): solo i criteri WCAG 2.0 e 2.1
+#   - EN 301 549 v4.1.1 (pubblicata a settembre 2026, non ancora citata in GUUE): tutti i 55
+#
+# I titoli sono tratti da "Web Content Accessibility Guidelines (WCAG) 2.2",
+# W3C Recommendation, https://www.w3.org/TR/WCAG22/ — W3C Document License.
+# I campi tier e since, e la mappatura EN 301 549, sono aggiunte di questo progetto.
+
+criteria:
+  - {id: "1.1.1", title: "Non-text Content", level: A, since: "2.0", tier: 1}
+  - {id: "1.2.1", title: "Audio-only and Video-only (Prerecorded)", level: A, since: "2.0", tier: 2}
+  - {id: "1.2.2", title: "Captions (Prerecorded)", level: A, since: "2.0", tier: 2}
+  - {id: "1.2.3", title: "Audio Description or Media Alternative (Prerecorded)", level: A, since: "2.0", tier: 2}
+  - {id: "1.2.4", title: "Captions (Live)", level: AA, since: "2.0", tier: 3}
+  - {id: "1.2.5", title: "Audio Description (Prerecorded)", level: AA, since: "2.0", tier: 2}
+  - {id: "1.3.1", title: "Info and Relationships", level: A, since: "2.0", tier: 1}
+  - {id: "1.3.2", title: "Meaningful Sequence", level: A, since: "2.0", tier: 3}
+  - {id: "1.3.3", title: "Sensory Characteristics", level: A, since: "2.0", tier: 2}
+  - {id: "1.3.4", title: "Orientation", level: AA, since: "2.1", tier: 1}
+  - {id: "1.3.5", title: "Identify Input Purpose", level: AA, since: "2.1", tier: 1}
+  - {id: "1.4.1", title: "Use of Color", level: A, since: "2.0", tier: 3}
+  - {id: "1.4.2", title: "Audio Control", level: A, since: "2.0", tier: 2}
+  - {id: "1.4.3", title: "Contrast (Minimum)", level: AA, since: "2.0", tier: 1}
+  - {id: "1.4.4", title: "Resize Text", level: AA, since: "2.0", tier: 1}
+  - {id: "1.4.5", title: "Images of Text", level: AA, since: "2.0", tier: 2}
+  - {id: "1.4.10", title: "Reflow", level: AA, since: "2.1", tier: 1}
+  - {id: "1.4.11", title: "Non-text Contrast", level: AA, since: "2.1", tier: 3}
+  - {id: "1.4.12", title: "Text Spacing", level: AA, since: "2.1", tier: 1}
+  - {id: "1.4.13", title: "Content on Hover or Focus", level: AA, since: "2.1", tier: 3}
+  - {id: "2.1.1", title: "Keyboard", level: A, since: "2.0", tier: 1}
+  - {id: "2.1.2", title: "No Keyboard Trap", level: A, since: "2.0", tier: 2}
+  - {id: "2.1.4", title: "Character Key Shortcuts", level: A, since: "2.1", tier: 2}
+  - {id: "2.2.1", title: "Timing Adjustable", level: A, since: "2.0", tier: 1}
+  - {id: "2.2.2", title: "Pause, Stop, Hide", level: A, since: "2.0", tier: 2}
+  - {id: "2.3.1", title: "Three Flashes or Below Threshold", level: A, since: "2.0", tier: 3}
+  - {id: "2.4.1", title: "Bypass Blocks", level: A, since: "2.0", tier: 2}
+  - {id: "2.4.2", title: "Page Titled", level: A, since: "2.0", tier: 1}
+  - {id: "2.4.3", title: "Focus Order", level: A, since: "2.0", tier: 3}
+  - {id: "2.4.4", title: "Link Purpose (In Context)", level: A, since: "2.0", tier: 1}
+  - {id: "2.4.5", title: "Multiple Ways", level: AA, since: "2.0", tier: 3}
+  - {id: "2.4.6", title: "Headings and Labels", level: AA, since: "2.0", tier: 2}
+  - {id: "2.4.7", title: "Focus Visible", level: AA, since: "2.0", tier: 2}
+  - {id: "2.4.11", title: "Focus Not Obscured (Minimum)", level: AA, since: "2.2", tier: 3}
+  - {id: "2.5.1", title: "Pointer Gestures", level: A, since: "2.1", tier: 3}
+  - {id: "2.5.2", title: "Pointer Cancellation", level: A, since: "2.1", tier: 3}
+  - {id: "2.5.3", title: "Label in Name", level: A, since: "2.1", tier: 2}
+  - {id: "2.5.4", title: "Motion Actuation", level: A, since: "2.1", tier: 2}
+  - {id: "2.5.7", title: "Dragging Movements", level: AA, since: "2.2", tier: 3}
+  - {id: "2.5.8", title: "Target Size (Minimum)", level: AA, since: "2.2", tier: 3}
+  - {id: "3.1.1", title: "Language of Page", level: A, since: "2.0", tier: 1}
+  - {id: "3.1.2", title: "Language of Parts", level: AA, since: "2.0", tier: 1}
+  - {id: "3.2.1", title: "On Focus", level: A, since: "2.0", tier: 3}
+  - {id: "3.2.2", title: "On Input", level: A, since: "2.0", tier: 3}
+  - {id: "3.2.3", title: "Consistent Navigation", level: AA, since: "2.0", tier: 3}
+  - {id: "3.2.4", title: "Consistent Identification", level: AA, since: "2.0", tier: 3}
+  - {id: "3.2.6", title: "Consistent Help", level: A, since: "2.2", tier: 3}
+  - {id: "3.3.1", title: "Error Identification", level: A, since: "2.0", tier: 2}
+  - {id: "3.3.2", title: "Labels or Instructions", level: A, since: "2.0", tier: 3}
+  - {id: "3.3.3", title: "Error Suggestion", level: AA, since: "2.0", tier: 3}
+  - {id: "3.3.4", title: "Error Prevention (Legal, Financial, Data)", level: AA, since: "2.0", tier: 3}
+  - {id: "3.3.7", title: "Redundant Entry", level: A, since: "2.2", tier: 3}
+  - {id: "3.3.8", title: "Accessible Authentication (Minimum)", level: AA, since: "2.2", tier: 3}
+  - {id: "4.1.2", title: "Name, Role, Value", level: A, since: "2.0", tier: 1}
+  - {id: "4.1.3", title: "Status Messages", level: AA, since: "2.1", tier: 3}
